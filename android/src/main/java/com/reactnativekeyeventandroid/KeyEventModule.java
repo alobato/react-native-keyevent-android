@@ -41,33 +41,33 @@ public class KeyEventModule extends ReactContextBaseJavaModule {
     SendEvent("onKeyDown", ConfigureJSResponse(keyCode, keyEvent, null));
   }
 
-  public void onKeyUpEvent(int keyCode, KeyEvent keyEvent) {
-    if (!this.context.hasActiveReactInstance()) {
-      return;
-    }
-    SendEvent("onKeyUp", ConfigureJSResponse(keyCode, keyEvent, null));
-  }
+  // public void onKeyUpEvent(int keyCode, KeyEvent keyEvent) {
+  //   if (!this.context.hasActiveReactInstance()) {
+  //     return;
+  //   }
+  //   SendEvent("onKeyUp", ConfigureJSResponse(keyCode, keyEvent, null));
+  // }
 
-  public void onKeyMultipleEvent(int keyCode, int repeatCount, KeyEvent keyEvent) {
-    if (!this.context.hasActiveReactInstance()) {
-      return;
-    }
-    SendEvent("onKeyMultiple", ConfigureJSResponse(keyCode, keyEvent, repeatCount));
-  }
+  // public void onKeyMultipleEvent(int keyCode, int repeatCount, KeyEvent keyEvent) {
+  //   if (!this.context.hasActiveReactInstance()) {
+  //     return;
+  //   }
+  //   SendEvent("onKeyMultiple", ConfigureJSResponse(keyCode, keyEvent, repeatCount));
+  // }
 
-  public void onDispatchKeyEvent(KeyEvent keyEvent) {
-    if (!this.context.hasActiveReactInstance()) {
-      return;
-    }
-    SendEvent("onDispatchKey", ConfigureJSResponse(keyEvent.getKeyCode(), keyEvent, null));
-  }
+  // public void onDispatchKeyEvent(KeyEvent keyEvent) {
+  //   if (!this.context.hasActiveReactInstance()) {
+  //     return;
+  //   }
+  //   SendEvent("onDispatchKey", ConfigureJSResponse(keyEvent.getKeyCode(), keyEvent, null));
+  // }
 
-  public void onDispatchBarcodeRead(String code) {
-    if (!this.context.hasActiveReactInstance()) {
-      return;
-    }
-    SendBarcode("onDispatchBarcodeRead", code);
-  }
+  // public void onDispatchBarcodeRead(String code) {
+  //   if (!this.context.hasActiveReactInstance()) {
+  //     return;
+  //   }
+  //   SendBarcode("onDispatchBarcodeRead", code);
+  // }
 
   /**
    * Configura a resposta para o js.
@@ -116,14 +116,14 @@ public class KeyEventModule extends ReactContextBaseJavaModule {
   /**
    * Envia o evento de código de barras para o javascript.
    */
-  private void SendBarcode(
-    String eventName,
-    String barcode
-  ) {
-    context
-      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-      .emit(eventName, barcode);
-  }
+  // private void SendBarcode(
+  //   String eventName,
+  //   String barcode
+  // ) {
+  //   context
+  //     .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+  //     .emit(eventName, barcode);
+  // }
 
   @Override
   @NonNull
